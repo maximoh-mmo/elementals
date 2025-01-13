@@ -411,7 +411,6 @@ MonoBehaviour:
   m_UseEncryption: 0
   m_MaxPacketQueueSize: 128
   m_MaxPayloadSize: 6144
-  m_MaxSendQueueSize: 0
   m_HeartbeatTimeoutMS: 500
   m_ConnectTimeoutMS: 1000
   m_MaxConnectAttempts: 60
@@ -424,13 +423,6 @@ MonoBehaviour:
     PacketDelayMS: 0
     PacketJitterMS: 0
     PacketDropRate: 0
-  m_State: 0
-  m_ServerClientId: 0
-  m_NetworkManager: {fileID: 0}
-  m_ServerPrivateKey: 
-  m_ServerCertificate: 
-  m_ServerCommonName: 
-  m_ClientCaCertificate: 
 --- !u!114 &734554151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,25 +436,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NetworkManagerExpanded: 0
-  <DistributedAuthorityMode>k__BackingField: 0
-  ClientsToRedistribute: []
-  RedistributeToClients: 0
-  DeferredDespawnObjects: []
-  <CurrentSessionOwner>k__BackingField: 0
-  ServerShutdownState: 0
-  m_ShutdownTimeout: 0
-  m_ShuttingDown: 0
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 734554150}
-    PlayerPrefab: {fileID: 0}
+    PlayerPrefab: {fileID: 1240868212258182561, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
     Prefabs:
       NetworkPrefabsLists:
       - {fileID: 11400000, guid: 61e60ee56d3e047409862c622af316c4, type: 2}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
-    ConnectionData: []
+    ConnectionData: 
     EnableTimeResync: 0
     TimeResyncInterval: 30
     EnsureNetworkVariableLengthSafety: 0
@@ -549,6 +533,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6294537895677146158
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1037939749152908821, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037939749152908821, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037939749152908821, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037939749152908821, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037939749152908821, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037939749152908821, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037939749152908821, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037939749152908821, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037939749152908821, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037939749152908821, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1240868212258182561, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: m_Name
+      value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950350120827504784, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 734058939
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950350120827504784, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1044298144
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 418d4d559ab477240a6b281195b577f2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -557,3 +606,4 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 734554152}
+  - {fileID: 6294537895677146158}
