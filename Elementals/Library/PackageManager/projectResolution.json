@@ -8,6 +8,14 @@
     "A:\\Documents\\Unity\\elementals\\Elementals\\Packages\\packages-lock.json"
   ],
   "outputs": {
+    "com.unity.ide.rider@3.0.34": {
+      "name": "com.unity.ide.rider",
+      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.ide.rider",
+      "fingerprint": "ecbf706690e5ce42dc165ddd8e5754acda3dc6b9",
+      "editorCompatibility": "2019.4.6f1",
+      "version": "3.0.34",
+      "source": "registry"
+    },
     "com.unity.multiplayer.center@1.0.0": {
       "name": "com.unity.multiplayer.center",
       "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.multiplayer.center",
@@ -23,6 +31,14 @@
       "editorCompatibility": "6000.0.0a1",
       "version": "2.2.0",
       "source": "registry"
+    },
+    "com.unity.render-pipelines.high-definition@17.0.3": {
+      "name": "com.unity.render-pipelines.high-definition",
+      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.render-pipelines.high-definition",
+      "fingerprint": "fd798014ab0b96dbff0864dbc249ec4bc3280aa4",
+      "editorCompatibility": "6000.0.0a1",
+      "version": "17.0.3",
+      "source": "builtin"
     },
     "com.unity.modules.accessibility@1.0.0": {
       "name": "com.unity.modules.accessibility",
@@ -228,6 +244,38 @@
       "version": "1.0.0",
       "source": "builtin"
     },
+    "com.unity.render-pipelines.core@17.0.3": {
+      "name": "com.unity.render-pipelines.core",
+      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.render-pipelines.core",
+      "fingerprint": "c6c30ab055d7d762f0b35abf019282abd487b6f7",
+      "editorCompatibility": "6000.0.0a1",
+      "version": "17.0.3",
+      "source": "builtin"
+    },
+    "com.unity.shadergraph@17.0.3": {
+      "name": "com.unity.shadergraph",
+      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.shadergraph",
+      "fingerprint": "e6e0df3c9e43d268733e3882298a59923bdf76d3",
+      "editorCompatibility": "6000.0.0a1",
+      "version": "17.0.3",
+      "source": "builtin"
+    },
+    "com.unity.visualeffectgraph@17.0.3": {
+      "name": "com.unity.visualeffectgraph",
+      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.visualeffectgraph",
+      "fingerprint": "21b86bd992f42752a1303bb9ed406d3a3d9fdea7",
+      "editorCompatibility": "6000.0.0a1",
+      "version": "17.0.3",
+      "source": "builtin"
+    },
+    "com.unity.render-pipelines.high-definition-config@17.0.3": {
+      "name": "com.unity.render-pipelines.high-definition-config",
+      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.render-pipelines.high-definition-config",
+      "fingerprint": "d45858853e614916d0e96df55a30b8c69d642992",
+      "editorCompatibility": "6000.0.0a1",
+      "version": "17.0.3",
+      "source": "builtin"
+    },
     "com.unity.transport@2.4.0": {
       "name": "com.unity.transport",
       "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.transport",
@@ -244,20 +292,28 @@
       "version": "1.11.4",
       "source": "registry"
     },
+    "com.unity.ext.nunit@2.0.5": {
+      "name": "com.unity.ext.nunit",
+      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.ext.nunit",
+      "fingerprint": "60ef35ffd3cd5e2f5c8887a4a4ca6148854cd092",
+      "editorCompatibility": "2019.4.0a1",
+      "version": "2.0.5",
+      "source": "registry"
+    },
+    "com.unity.searcher@4.9.2": {
+      "name": "com.unity.searcher",
+      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.searcher",
+      "fingerprint": "90d011a70418fd5b0f4b8e86df39444d2af228dd",
+      "editorCompatibility": "2019.1.0a1",
+      "version": "4.9.2",
+      "source": "registry"
+    },
     "com.unity.burst@1.8.18": {
       "name": "com.unity.burst",
       "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.burst",
       "fingerprint": "616862665d8c8ffe643d505aebb5de2ee73b0ab0",
       "editorCompatibility": "2020.3.0a1",
       "version": "1.8.18",
-      "source": "registry"
-    },
-    "com.unity.collections@2.5.1": {
-      "name": "com.unity.collections",
-      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.collections",
-      "fingerprint": "56bff8827a7ef6d44fcee4f36e558a74da89c1a0",
-      "editorCompatibility": "2022.3.11f1",
-      "version": "2.5.1",
       "source": "registry"
     },
     "com.unity.mathematics@1.3.2": {
@@ -267,6 +323,30 @@
       "editorCompatibility": "2021.3.0a1",
       "version": "1.3.2",
       "source": "registry"
+    },
+    "com.unity.ugui@2.0.0": {
+      "name": "com.unity.ugui",
+      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.ugui",
+      "fingerprint": "e6653db8377f18d2d6df3466ab35fb2d87c9c264",
+      "editorCompatibility": "2019.2.0a1",
+      "version": "2.0.0",
+      "source": "builtin"
+    },
+    "com.unity.collections@2.5.1": {
+      "name": "com.unity.collections",
+      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.collections",
+      "fingerprint": "56bff8827a7ef6d44fcee4f36e558a74da89c1a0",
+      "editorCompatibility": "2022.3.11f1",
+      "version": "2.5.1",
+      "source": "registry"
+    },
+    "com.unity.rendering.light-transport@1.0.1": {
+      "name": "com.unity.rendering.light-transport",
+      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.rendering.light-transport",
+      "fingerprint": "307bc27a498fc9cd409bbd426c85d8dc7f140bc1",
+      "editorCompatibility": "2023.3.0b1",
+      "version": "1.0.1",
+      "source": "builtin"
     },
     "com.unity.test-framework@1.4.5": {
       "name": "com.unity.test-framework",
@@ -282,14 +362,6 @@
       "fingerprint": "fb0dc592af8b524f1a06c50d7caf95552f1bcd2f",
       "editorCompatibility": "2020.3.0a1",
       "version": "3.0.3",
-      "source": "registry"
-    },
-    "com.unity.ext.nunit@2.0.5": {
-      "name": "com.unity.ext.nunit",
-      "resolvedPath": "A:\\Documents\\Unity\\elementals\\Elementals\\Library\\PackageCache\\com.unity.ext.nunit",
-      "fingerprint": "60ef35ffd3cd5e2f5c8887a4a4ca6148854cd092",
-      "editorCompatibility": "2019.4.0a1",
-      "version": "2.0.5",
       "source": "registry"
     }
   }
