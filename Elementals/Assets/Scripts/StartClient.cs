@@ -7,6 +7,10 @@ public class StartClient : MonoBehaviour
     void Start()
     {
         if (NetworkManager.Singleton != null)
+        {
+            NetworkManager.Singleton.NetworkConfig.ConnectionData =
+                System.Text.Encoding.ASCII.GetBytes("secretpassword");
             NetworkManager.Singleton.StartClient();
+        }
     }
 }
