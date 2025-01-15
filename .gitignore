@@ -10,6 +10,22 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
+/Elementals/[Ll]ibrary/
+/Elementals/[Tt]emp/
+/Elementals/[Oo]bj/
+/Elementals/[Bb]uild/
+/Elementals/[Bb]uilds/
+/Elementals/[Ll]ogs/
+/Elementals/[Uu]ser[Ss]ettings/
+
+/Elementals_Secondary/[Ll]ibrary/
+/Elementals_Secondary/[Tt]emp/
+/Elementals_Secondary/[Oo]bj/
+/Elementals_Secondary/[Bb]uild/
+/Elementals_Secondary/[Bb]uilds/
+/Elementals_Secondary/[Ll]ogs/
+/Elementals_Secondary/[Uu]ser[Ss]ettings/
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
