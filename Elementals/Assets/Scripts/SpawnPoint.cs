@@ -20,7 +20,7 @@ public class SpawnPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemies.Count < maxEnemies)
+        while(enemies.Count < maxEnemies)
         {
             enemies.Add(factory.SpawnEnemy(EnemySpawnPosition()));
         }
@@ -30,16 +30,24 @@ public class SpawnPoint : MonoBehaviour
     {
         Vector3 position = Vector3.zero;
         Vector3 center = transform.position;
-        position.x = Random.Range(-SpawnRadius, SpawnRadius);
-        position.z = Random.Range(-SpawnRadius, SpawnRadius);
-        position += center;
         RaycastHit hit;
         LayerMask mask = LayerMask.GetMask("Terrain", "Water");
-        if (Physics.Raycast(new Vector3(position.x, 9999f, position.z), -Vector3.up, out hit, Mathf.Infinity, mask))
+        do
         {
-            position.y = hit.point.y;
-        }
-
+            position.x = Random.Range(-SpawnRadius, SpawnRadius);
+            position.z = Random.Range(-SpawnRadius, SpawnRadius);
+            position += center;
+            if (Physics.Raycast(new Vector3(position.x, 9999f, position.z), Vector3.down, out hit, Mathf.Infinity,
+                    mask))
+            {
+                position.y = hit.point.y;
+            }
+            else
+            {
+                position.y = 0;
+            }
+        } while (position.y == 0);
+        
         return position;
     }
 }

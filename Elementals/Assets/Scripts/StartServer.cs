@@ -1,7 +1,5 @@
 using Unity.Netcode;
-using Unity.Networking.Transport;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class StartServer : MonoBehaviour
 {
@@ -45,17 +43,20 @@ public class StartServer : MonoBehaviour
     Vector3 InstantiateRandomPosition(float offset)
     {
         Terrain terrain = Terrain.activeTerrain;
-        LayerMask mask = LayerMask.GetMask("Terrain");
+        LayerMask mask = LayerMask.GetMask("Terrain", "Water");
         Vector3 randomPosition = new Vector3();
         RaycastHit hit;
-        float TerrainHeight = 0f;
-        randomPosition.x = Random.Range(terrain.transform.position.x, terrain.transform.position.x + terrain.terrainData.size.x);
-        randomPosition.z = Random.Range(terrain.transform.position.y, terrain.transform.position.y + terrain.terrainData.size.y);
-        if(Physics.Raycast(new Vector3(randomPosition.x, 9999f, randomPosition.z), -Vector3.up, out hit, Mathf.Infinity, mask))
+        do
         {
-            TerrainHeight = hit.point.y;
-        }
-        randomPosition.y = TerrainHeight + offset;
+            randomPosition.x = Random.Range(terrain.transform.position.x, terrain.transform.position.x + terrain.terrainData.size.x);
+            randomPosition.z = Random.Range(terrain.transform.position.y, terrain.transform.position.y + terrain.terrainData.size.y);
+            Debug.Log("RandomPosition= " +randomPosition.x +", " + randomPosition.y+", " + randomPosition.z);
+            if (Physics.Raycast(new Vector3(randomPosition.x, 9999f, randomPosition.z), Vector3.down, out hit, Mathf.Infinity,
+                    mask))
+            {
+                randomPosition.y = hit.point.y;
+            }
+        } while (randomPosition.y == 0);
         return randomPosition;
     }
 }

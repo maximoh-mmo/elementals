@@ -1,9 +1,6 @@
-﻿using System;
-using NUnit.Framework;
-using TMPro;
+﻿using TMPro;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class NetworkUptime : NetworkBehaviour
 {
@@ -12,22 +9,17 @@ public class NetworkUptime : NetworkBehaviour
     private NetworkVariable<int> _numClients = new();
     [SerializeField]
     private TextMeshProUGUI upTimeValue;
-    [SerializeField]
-    private TextMeshProUGUI numClientsValue
-        ;
-    private void Start()
-    {
-        Assert.IsNotNull(upTimeValue);
-    }
+
+    [SerializeField] private TextMeshProUGUI numClientsValue;
 
     public override void OnNetworkSpawn()
     {
         if (IsServer)
         {
             _networkUptime.Value = 0f;
-            _numClients = new NetworkVariable<int>(NetworkManager.Singleton.ConnectedClients.Count);
+            _numClients.Value = NetworkManager.Singleton.ConnectedClients.Count;
             //Debug.Log("Server Uptime variable initialized to " + _networkUptime.Value);
-            //Debug.Log("Server Uptime variable initialized to " + _numClients.Value);
+            Debug.Log("Server num clients variable initialized to " + _numClients.Value);
 
         }
     }
@@ -36,7 +28,7 @@ public class NetworkUptime : NetworkBehaviour
     {
         if (IsServer)
         {
-            _numClients = new NetworkVariable<int>(NetworkManager.Singleton.ConnectedClients.Count);
+            _numClients.Value = NetworkManager.Singleton.ConnectedClients.Count;
         }
     }
 
@@ -45,8 +37,7 @@ public class NetworkUptime : NetworkBehaviour
         var t_now = Time.time;
         if (IsServer)
         {
-            var clients = NetworkManager.Singleton.ConnectedClients.Count;
-            _numClients = new NetworkVariable<int>(clients);
+            _numClients.Value = NetworkManager.Singleton.ConnectedClients.Count;
             _networkUptime.Value += 0.1f;
             if (t_now - _lastT > 0.5f)
             {
