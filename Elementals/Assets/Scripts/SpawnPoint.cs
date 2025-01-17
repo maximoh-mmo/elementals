@@ -34,7 +34,7 @@ public class SpawnPoint : MonoBehaviour
         position.z = Random.Range(-SpawnRadius, SpawnRadius);
         position += center;
         RaycastHit hit;
-        LayerMask mask = LayerMask.NameToLayer("Terrain");
+        LayerMask mask = LayerMask.GetMask("Terrain", "Water");
         if (Physics.Raycast(new Vector3(position.x, 9999f, position.z), -Vector3.up, out hit, Mathf.Infinity, mask))
         {
             position.y = hit.point.y;
