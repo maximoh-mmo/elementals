@@ -189,9 +189,9 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 2
-  m_AreaSize: {x: 1, y: 1}
+  m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5000
+  m_ColorTemperature: 3210
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 7.365175e+31, y: 15384.356, z: 1.8331856e+31, w: 8.672746e-33}
   m_UseBoundingSphereOverride: 0
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_MaxConnectAttempts: 60
   m_DisconnectTimeoutMS: 30000
   ConnectionData:
-    Address: 13.51.199.141
+    Address: 127.0.0.1
     Port: 7777
     ServerListenAddress: 127.0.0.1
   DebugSimulator:

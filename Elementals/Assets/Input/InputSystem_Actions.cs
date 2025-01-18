@@ -62,6 +62,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CameraZoomIn"",
+                    ""type"": ""Value"",
+                    ""id"": ""0622992c-0654-40b2-807b-3ac25875faf2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CameraZoomOut"",
+                    ""type"": ""Value"",
+                    ""id"": ""5a27eb99-dff2-4aae-9ba7-25facc2c1e85"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -166,22 +184,11 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8"",
-                    ""path"": ""<XRController>/{Primary2DAxis}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""8c8e490b-c610-4785-884f-f04217b23ca4"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse;Touch"",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -203,8 +210,30 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""RMB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e7ad1f8-f4aa-4b89-9334-a173e4a5779f"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CameraZoomIn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d93ff780-7fac-43ca-817d-e15802f263e5"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CameraZoomOut"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -796,6 +825,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_LMB = m_Player.FindAction("LMB", throwIfNotFound: true);
         m_Player_RMB = m_Player.FindAction("RMB", throwIfNotFound: true);
+        m_Player_CameraZoomIn = m_Player.FindAction("CameraZoomIn", throwIfNotFound: true);
+        m_Player_CameraZoomOut = m_Player.FindAction("CameraZoomOut", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -879,6 +910,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_LMB;
     private readonly InputAction m_Player_RMB;
+    private readonly InputAction m_Player_CameraZoomIn;
+    private readonly InputAction m_Player_CameraZoomOut;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -887,6 +920,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @LMB => m_Wrapper.m_Player_LMB;
         public InputAction @RMB => m_Wrapper.m_Player_RMB;
+        public InputAction @CameraZoomIn => m_Wrapper.m_Player_CameraZoomIn;
+        public InputAction @CameraZoomOut => m_Wrapper.m_Player_CameraZoomOut;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -908,6 +943,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @RMB.started += instance.OnRMB;
             @RMB.performed += instance.OnRMB;
             @RMB.canceled += instance.OnRMB;
+            @CameraZoomIn.started += instance.OnCameraZoomIn;
+            @CameraZoomIn.performed += instance.OnCameraZoomIn;
+            @CameraZoomIn.canceled += instance.OnCameraZoomIn;
+            @CameraZoomOut.started += instance.OnCameraZoomOut;
+            @CameraZoomOut.performed += instance.OnCameraZoomOut;
+            @CameraZoomOut.canceled += instance.OnCameraZoomOut;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -924,6 +965,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @RMB.started -= instance.OnRMB;
             @RMB.performed -= instance.OnRMB;
             @RMB.canceled -= instance.OnRMB;
+            @CameraZoomIn.started -= instance.OnCameraZoomIn;
+            @CameraZoomIn.performed -= instance.OnCameraZoomIn;
+            @CameraZoomIn.canceled -= instance.OnCameraZoomIn;
+            @CameraZoomOut.started -= instance.OnCameraZoomOut;
+            @CameraZoomOut.performed -= instance.OnCameraZoomOut;
+            @CameraZoomOut.canceled -= instance.OnCameraZoomOut;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1110,6 +1157,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnLMB(InputAction.CallbackContext context);
         void OnRMB(InputAction.CallbackContext context);
+        void OnCameraZoomIn(InputAction.CallbackContext context);
+        void OnCameraZoomOut(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
