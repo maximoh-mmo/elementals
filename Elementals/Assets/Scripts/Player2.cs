@@ -2,7 +2,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Player : NetworkBehaviour
+public class Player2 : NetworkBehaviour
 {
     private NavMeshAgent _navMeshAgent;
     private CameraController _cameraController;
@@ -10,7 +10,7 @@ public class Player : NetworkBehaviour
     [Header("Character Settings")] [SerializeField]
     private float movementSpeed = 5.0f;
 
-    [SerializeField] private float rotationSpeed = 200f; // Speed of rotation
+    [SerializeField] private float rotationSpeed = 20f; // Speed of rotation
     [SerializeField] private float attackRange = 5f;
     public float MovementSpeed { get => movementSpeed; }
     public float RotationSpeed { get => rotationSpeed; }
@@ -20,14 +20,15 @@ public class Player : NetworkBehaviour
     {
         base.OnNetworkSpawn();
         Debug.Log("Player Spawned... Initializing....\nCurrent Position is : " + this.transform.position);
-        PlayerVisualisation playerVisualisation = gameObject.AddComponent<PlayerVisualisation>();
-        if (!_navMeshAgent)
+        if (!_navMeshAgent && IsOwner)
         {
+            _navMeshAgent = this.GetComponent<NavMeshAgent>();
             NavMeshHit closestHit;
             if (NavMesh.SamplePosition(transform.position, out closestHit, 50, NavMesh.GetAreaFromName("WalkableArea")))
             {
                 transform.position = closestHit.position;
-                _navMeshAgent = gameObject.AddComponent<NavMeshAgent>();
+                if (!_navMeshAgent)
+                    _navMeshAgent = gameObject.AddComponent<NavMeshAgent>();
             }
             else
             {
@@ -41,12 +42,9 @@ public class Player : NetworkBehaviour
             mainCamera.transform.position += Vector3.forward * -10;
             mainCamera.transform.LookAt(transform.position);
             _cameraController = mainCamera.gameObject.AddComponent<CameraController>();
-            PlayerInputHandler playerInputHandler = gameObject.AddComponent<PlayerInputHandler>();
             _cameraController.CameraTarget = transform;
         }
-        PlayerMovementHandler playerMovementHandler = gameObject.AddComponent<PlayerMovementHandler>();
-        PlayerAttackHandler playerAttackHandler = gameObject.AddComponent<PlayerAttackHandler>();
         if (_navMeshAgent!=null)
-            playerMovementHandler.NavMeshAgent = _navMeshAgent;
+            GetComponent<PlayerMovementHandler>().NavMeshAgent = _navMeshAgent;
     }
 }

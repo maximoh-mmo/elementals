@@ -443,7 +443,7 @@ MonoBehaviour:
   m_MaxConnectAttempts: 60
   m_DisconnectTimeoutMS: 30000
   ConnectionData:
-    Address: 127.0.0.1
+    Address: 13.51.199.141
     Port: 7777
     ServerListenAddress: 127.0.0.1
   DebugSimulator:
@@ -466,7 +466,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 734554150}
-    PlayerPrefab: {fileID: 4015339868775594364, guid: 8ac3b3caacac92e4a8d57b53316b234b, type: 3}
+    PlayerPrefab: {fileID: 4015339868775594364, guid: 7ee8b78e9dbed1d4ba04a7518561be5b, type: 3}
     Prefabs:
       NetworkPrefabsLists:
       - {fileID: 11400000, guid: 61e60ee56d3e047409862c622af316c4, type: 2}
